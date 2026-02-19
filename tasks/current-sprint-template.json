@@ -1,0 +1,175 @@
+{
+  "sprint_id": "sprint-2026-02-19-001",
+  "created_at": "2026-02-19T10:00:00Z",
+  "created_by": "MainAgent",
+  "user_request": "Description of what user asked for",
+  
+  "metadata": {
+    "estimated_total_duration": "3 hours",
+    "task_count": 12,
+    "completed_count": 0,
+    "in_progress_count": 0,
+    "blocked_count": 8,
+    "ready_count": 4,
+    "failed_count": 0
+  },
+  
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Short descriptive title",
+      "description": "Detailed description of what needs to be done",
+      "type": "backend",
+      "priority": 10,
+      "status": "ready",
+      "dependencies": [],
+      "assigned_to": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "estimated_duration": "15min",
+      
+      "files_to_create": [
+        "path/to/new/file.ts"
+      ],
+      "files_to_modify": [
+        "path/to/existing/file.ts"
+      ],
+      
+      "acceptance_criteria": [
+        "Criterion 1 that must be met",
+        "Criterion 2 that must be met",
+        "Criterion 3 that must be met"
+      ],
+      
+      "technical_notes": [
+        "Refer to technical-spec.md section X for standards",
+        "Follow api-spec.md for endpoint contract",
+        "Use database schema from database-schema.md"
+      ],
+      
+      "result_file": null,
+      "error": null,
+      "retry_count": 0,
+      "notes": []
+    },
+    
+    {
+      "id": "task-002",
+      "title": "Another task title",
+      "description": "This task depends on task-001 completing first",
+      "type": "backend",
+      "priority": 9,
+      "status": "blocked",
+      "dependencies": ["task-001"],
+      "assigned_to": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "estimated_duration": "30min",
+      
+      "files_to_create": [
+        "path/to/controller.ts",
+        "path/to/routes.ts"
+      ],
+      "files_to_modify": [],
+      
+      "acceptance_criteria": [
+        "Criterion 1",
+        "Criterion 2"
+      ],
+      
+      "technical_notes": [
+        "Depends on task-001 database schema",
+        "Implement error handling per technical-spec.md"
+      ],
+      
+      "result_file": null,
+      "error": null,
+      "retry_count": 0,
+      "notes": []
+    },
+    
+    {
+      "id": "task-003",
+      "title": "Frontend task example",
+      "description": "Create a UI component",
+      "type": "frontend",
+      "priority": 8,
+      "status": "ready",
+      "dependencies": [],
+      "assigned_to": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "estimated_duration": "45min",
+      
+      "files_to_create": [
+        "src/components/MyComponent.tsx",
+        "src/components/MyComponent.test.tsx"
+      ],
+      "files_to_modify": [
+        "src/App.tsx"
+      ],
+      
+      "acceptance_criteria": [
+        "Component renders correctly",
+        "Responsive on mobile and desktop",
+        "Accessible via keyboard navigation"
+      ],
+      
+      "technical_notes": [
+        "Follow component structure from architecture.md",
+        "Use design system tokens for styling"
+      ],
+      
+      "result_file": null,
+      "error": null,
+      "retry_count": 0,
+      "notes": []
+    },
+    
+    {
+      "id": "task-004",
+      "title": "Testing task example",
+      "description": "Test the feature implemented in previous tasks",
+      "type": "testing",
+      "priority": 6,
+      "status": "blocked",
+      "dependencies": ["task-002", "task-003"],
+      "assigned_to": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "estimated_duration": "30min",
+      
+      "files_to_create": [
+        "tests/integration/feature.test.ts"
+      ],
+      "files_to_modify": [],
+      
+      "acceptance_criteria": [
+        "All integration tests pass",
+        "Test coverage > 80%",
+        "No critical bugs found"
+      ],
+      
+      "technical_notes": [
+        "Test against acceptance criteria from user-stories.md",
+        "Follow testing checklist in TestingTeammate agent"
+      ],
+      
+      "result_file": null,
+      "error": null,
+      "retry_count": 0,
+      "notes": []
+    }
+  ],
+  
+  "comments": [
+    "Task types: backend | frontend | testing | devops | documentation",
+    "Task status: ready | blocked | claimed | in-progress | review | completed | failed",
+    "Priority: 1-10, where 10 is highest priority",
+    "Dependencies: Array of task IDs that must complete before this task can start"
+  ]
+}
