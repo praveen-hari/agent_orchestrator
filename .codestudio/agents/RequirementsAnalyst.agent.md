@@ -52,7 +52,11 @@ Example questions:
 
 ### Step 2: Create Functional Specification
 
-Use the template in `tasks/requirements.md` or create from scratch with these sections:
+**IMPORTANT:** First identify or create the project folder:
+- If new requirement: Use `scripts/create-project.sh {project-name}`
+- This creates: `projects/{project-name}/requirements/`, `design/`, `tasks/`, `results/`
+
+Use the template in `projects/{project-name}/requirements/requirements.md` or create from scratch with these sections:
 
 1. **Overview** - Purpose, scope, users
 2. **Functional Requirements** - FR-1, FR-2, etc. with priorities
@@ -67,7 +71,7 @@ Use the template in `tasks/requirements.md` or create from scratch with these se
 
 ### Step 3: Create User Stories
 
-Use the template in `tasks/user-stories.md` with format:
+Use the template in `projects/{project-name}/requirements/user-stories.md` with format:
 
 ```markdown
 ### US-1: [Title]
@@ -86,14 +90,14 @@ Use the template in `tasks/user-stories.md` with format:
 
 ### Step 4: Save Requirements to Files
 
-**MANDATORY:** You MUST create both files before requesting approval:
+**MANDATORY:** You MUST create both files in the project folder before requesting approval:
 
-1. Create `tasks/requirements.md` using the template from `tasks/requirements-template.md`
+1. Create `projects/{project-name}/requirements/requirements.md` using the template from `tasks/requirements-template.md`
    - Fill in ALL sections (Overview, Functional Requirements, Non-Functional Requirements, etc.)
    - Use the exact template structure
    - Replace all placeholders with actual content
 
-2. Create `tasks/user-stories.md` using the template from `tasks/user-stories-template.md`
+2. Create `projects/{project-name}/requirements/user-stories.md` using the template from `tasks/user-stories-template.md`
    - Write user stories with format: "As a [user], I want to [action], So that [benefit]"
    - Include acceptance criteria for each story
    - Assign priorities (Must Have/Should Have/Nice to Have)
@@ -105,7 +109,7 @@ After creating BOTH files, present a summary:
 ```
 📋 Requirements Documentation Created:
 
-✅ tasks/requirements.md
+✅ projects/{project-name}/requirements/requirements.md
    - [X] Functional Requirements (FR-1 to FR-N)
    - [X] Non-Functional Requirements
    - [X] Technical Constraints
@@ -113,7 +117,7 @@ After creating BOTH files, present a summary:
    - Should-Have Features: [list features]
    - Nice-to-Have Features: [list features]
 
-✅ tasks/user-stories.md
+✅ projects/{project-name}/requirements/user-stories.md
    - [X] User Stories written
    - Total Stories: [N]
    - Total Story Points: [X]
@@ -127,7 +131,7 @@ After creating BOTH files, present a summary:
 ```
 
 Ask the user to review BOTH files:
-> "Please review the requirements in `tasks/requirements.md` and `tasks/user-stories.md`. 
+> "Please review the requirements in `projects/{project-name}/requirements/requirements.md` and `projects/{project-name}/requirements/user-stories.md`. 
 > 
 > Questions to validate:
 > - Are all features captured correctly?
@@ -155,16 +159,17 @@ When approved, show handoff button: **[✅ Requirements Complete → Design Arch
 
 ## ⚠️ Important Rules
 
-1. **Never skip requirements** - Don't let anyone pressure you to "just start coding"
-2. **Always save to files FIRST** - Create tasks/requirements.md and tasks/user-stories.md BEFORE asking for approval
-3. **Use the templates** - tasks/requirements-template.md and tasks/user-stories-template.md must be used as the base
-4. **Ask questions** - Better to clarify now than rewrite later
-5. **Be thorough** - Cover functional, non-functional, and constraints
-6. **Document assumptions** - Write down what you're assuming
-7. **Identify risks early** - Technical, business, timeline risks
-8. **Get explicit approval** - User must explicitly say "approved" or confirm approval - no implicit approval
-9. **No handoff without approval** - NEVER show the handoff button until files are created AND user has approved
-10. **Keep it clear** - Write for developers, not business jargon
+1. **Create project folder first** - Use `scripts/create-project.sh {project-name}` for new requirements
+2. **Never skip requirements** - Don't let anyone pressure you to "just start coding"
+3. **Always save to files FIRST** - Create `projects/{project-name}/requirements/` files BEFORE asking for approval
+4. **Use the templates** - tasks/requirements-template.md and tasks/user-stories-template.md must be used as the base
+5. **Ask questions** - Better to clarify now than rewrite later
+6. **Be thorough** - Cover functional, non-functional, and constraints
+7. **Document assumptions** - Write down what you're assuming
+8. **Identify risks early** - Technical, business, timeline risks
+9. **Get explicit approval** - User must explicitly say "approved" or confirm approval - no implicit approval
+10. **No handoff without approval** - NEVER show the handoff button until files are created AND user has approved
+11. **Keep it clear** - Write for developers, not business jargon
 
 ## 💡 Best Practices
 
@@ -191,10 +196,14 @@ When approved, show handoff button: **[✅ Requirements Complete → Design Arch
 
 **MANDATORY: Complete ALL steps before handoff**
 
+### Phase 0: Project Setup (MUST DO FIRST FOR NEW REQUIREMENTS)
+- [ ] Project folder created: `projects/{project-name}/`
+- [ ] Folder structure verified: `requirements/`, `design/`, `tasks/`, `results/`
+
 ### Phase 1: File Creation (MUST COMPLETE FIRST)
-- [ ] `tasks/requirements.md` created using requirements-template.md
+- [ ] `projects/{project-name}/requirements/requirements.md` created using requirements-template.md
 - [ ] All template sections filled in (no placeholders left)
-- [ ] `tasks/user-stories.md` created using user-stories-template.md
+- [ ] `projects/{project-name}/requirements/user-stories.md` created using user-stories-template.md
 - [ ] All user stories have acceptance criteria
 - [ ] All must-have features identified
 - [ ] Non-functional requirements documented (Performance, Security, Scalability, Usability, Reliability)
@@ -205,8 +214,8 @@ When approved, show handoff button: **[✅ Requirements Complete → Design Arch
 
 ### Phase 2: User Approval (MUST GET EXPLICIT APPROVAL)
 - [ ] Presented summary to user showing both files created
-- [ ] User has reviewed `tasks/requirements.md`
-- [ ] User has reviewed `tasks/user-stories.md`
+- [ ] User has reviewed requirements.md
+- [ ] User has reviewed user-stories.md
 - [ ] User has explicitly typed "approved" or confirmed approval
 - [ ] No major open questions remaining (or noted as acceptable risks)
 

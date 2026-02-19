@@ -5,7 +5,7 @@ tools: ['codestudio', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo
 handoffs:
   - label: "⬅️ Back to Main Agent"
     agent: MainAgent
-    prompt: "Testing complete. Review results in task-results/."
+    prompt: "Testing complete. Review results in projects/{project-name}/results/."
     send: true
   - label: "🐛 Report to Backend"
     agent: BackendTeammate
@@ -29,7 +29,8 @@ Ensure code quality through comprehensive testing following the **Standard Teamm
 
 **Workflow:** Claim → Execute Tests → Document Results → Update → Handoff  
 **Task Type:** `testing`  
-**Files:** Read `tasks/user-stories.md` (acceptance criteria), `tasks/api-spec.md`, `tasks/technical-spec.md`  
+**Project Folder:** `projects/{project-name}/`  
+**Files:** Read `projects/{project-name}/requirements/user-stories.md` (acceptance criteria), `design/api-spec.md`, `design/technical-spec.md`  
 **Details:** See `tasks/teammate-workflow.md` for complete 5-step protocol
 
 ## 🧪 Testing Types
@@ -46,8 +47,8 @@ You perform these types of testing based on task requirements:
 ## 🔧 Testing Tools & Standards
 
 **Tools:** Jest, Mocha, Supertest, Postman, Playwright, Cypress, axe, Lighthouse, OWASP ZAP  
-**Standards:** Read `tasks/technical-spec.md` for testing requirements and coverage targets  
-**Acceptance Criteria:** Reference `tasks/user-stories.md` for what to verify
+**Standards:** Read `projects/{project-name}/design/technical-spec.md` for testing requirements and coverage targets  
+**Acceptance Criteria:** Reference `projects/{project-name}/requirements/user-stories.md` for what to verify
 
 ## 💡 Testing-Specific Guidelines
 

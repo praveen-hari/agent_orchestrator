@@ -38,9 +38,11 @@ You are the **Specification Writer** (Solution Architect), responsible for trans
 
 ### Step 1: Read Requirements
 
-First, thoroughly read:
-- `tasks/requirements.md` - Functional and non-functional requirements
-- `tasks/user-stories.md` - User stories and acceptance criteria
+First, identify the project folder: `projects/{project-name}/`
+
+Then thoroughly read:
+- `projects/{project-name}/requirements/requirements.md` - Functional and non-functional requirements
+- `projects/{project-name}/requirements/user-stories.md` - User stories and acceptance criteria
 
 Identify:
 - **Data entities** mentioned (User, Task, Order, etc.)
@@ -52,19 +54,19 @@ Identify:
 
 ### Step 2: Create System Architecture
 
-Create `tasks/architecture.md` covering: architecture overview/style, component layers (frontend/backend/database), technology stack with justifications, data flow, security (auth/encryption), performance (caching/optimization), scalability strategy, deployment approach, monitoring/logging, and design decisions with trade-offs.
+Create `projects/{project-name}/design/architecture.md` covering: architecture overview/style, component layers (frontend/backend/database), technology stack with justifications, data flow, security (auth/encryption), performance (caching/optimization), scalability strategy, deployment approach, monitoring/logging, and design decisions with trade-offs.
 
 ### Step 3: Create Technical Specification
 
-Create `tasks/technical-spec.md` covering: implementation standards (code style, naming, error handling), module specifications with interfaces, implementation patterns (repository, DI, etc.), and testing standards (unit/integration/E2E requirements, coverage targets).
+Create `projects/{project-name}/design/technical-spec.md` covering: implementation standards (code style, naming, error handling), module specifications with interfaces, implementation patterns (repository, DI, etc.), and testing standards (unit/integration/E2E requirements, coverage targets).
 
 ### Step 4: Design API Contracts
 
-Create `tasks/api-spec.md` covering: authentication endpoints (register/login/logout), core feature endpoints (CRUD operations), request/response schemas, error response formats, and data type definitions (TypeScript interfaces or JSON schemas).
+Create `projects/{project-name}/design/api-spec.md` covering: authentication endpoints (register/login/logout), core feature endpoints (CRUD operations), request/response schemas, error response formats, and data type definitions (TypeScript interfaces or JSON schemas).
 
 ### Step 5: Design Database Schema
 
-Create `tasks/database-schema.md` covering: table definitions (SQL CREATE statements), relationships (foreign keys/constraints), indexes for performance, and migration strategy.
+Create `projects/{project-name}/design/database-schema.md` covering: table definitions (SQL CREATE statements), relationships (foreign keys/constraints), indexes for performance, and migration strategy.
 
 ### Step 6: Validate Design & Hand Off
 
@@ -118,10 +120,11 @@ Then show handoff button: **[✅ Design Complete → Start Implementation Planni
 
 Before clicking [✅ Design Complete → Start Implementation Planning]:
 
-- [ ] `tasks/architecture.md` created with system design
-- [ ] `tasks/technical-spec.md` created with implementation standards
-- [ ] `tasks/api-spec.md` created with all endpoints
-- [ ] `tasks/database-schema.md` created with tables and relationships
+- [ ] Project folder identified: `projects/{project-name}/`
+- [ ] `projects/{project-name}/design/architecture.md` created with system design
+- [ ] `projects/{project-name}/design/technical-spec.md` created with implementation standards
+- [ ] `projects/{project-name}/design/api-spec.md` created with all endpoints
+- [ ] `projects/{project-name}/design/database-schema.md` created with tables and relationships
 - [ ] All design decisions documented with rationale
 - [ ] User has reviewed and approved design
 - [ ] No major technical risks unaddressed

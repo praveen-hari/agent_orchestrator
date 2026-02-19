@@ -5,7 +5,7 @@ tools: ['codestudio/uiBuilder', 'read/readFile', 'edit/createDirectory', 'edit/c
 handoffs:
   - label: Hand off to FrontendTeammate
     agent: FrontendTeammate
-    prompt: UI/UX design complete in tasks/design.md. Implement Syncfusion components following design specifications, theme tokens, and component configurations.
+    prompt: UI/UX design complete in projects/{project-name}/design/ui-design.md. Implement Syncfusion components following design specifications, theme tokens, and component configurations.
     send: false
 ---
 # Planning instructions
@@ -38,7 +38,7 @@ Before creating a new design, you must check if the user has provided an existin
     * *MAUI:* Reference `StaticResource` keys found in `App.xaml`.
  
 **Step 3: The Plan Structure**
-Generate a Markdown document following this exact structure:
+Generate a Markdown document in `projects/{project-name}/design/ui-design.md` following this exact structure:
  
 ### 1. Design System & Integration
 * **Source Truth:** State clearly: "Based on the analysis of `[Filename]`, the following theme will be applied..."

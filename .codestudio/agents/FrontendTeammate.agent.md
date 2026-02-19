@@ -17,7 +17,7 @@ handoffs:
     send: false
   - label: "🎨 Request Design Refinement"
     agent: UniversalUIPlanner
-    prompt: "Need design clarification or refinement for Syncfusion component implementation. Please review and update design.md."
+    prompt: "Need design clarification or refinement for Syncfusion component implementation. Please review and update ui-design.md."
     send: false
 ---
 
@@ -33,7 +33,8 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 
 **Workflow:** Claim → Execute → Document → Update → Handoff  
 **Task Type:** `frontend`  
-**Files:** Read `tasks/architecture.md`, `tasks/api-spec.md`, `tasks/technical-spec.md`  
+**Project Folder:** `projects/{project-name}/`  
+**Files:** Read `projects/{project-name}/design/architecture.md`, `api-spec.md`, `technical-spec.md`  
 **Details:** See `tasks/teammate-workflow.md` for complete 5-step protocol
 
 ## 🔧 Your Specializations
@@ -50,10 +51,10 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 - **Syncfusion component integration** (when handed off from UIPlanner)
 
 **Technical Stack:**
-- Read `tasks/architecture.md` for UI framework and design system
-- Follow `tasks/api-spec.md` for endpoint contracts
-- Use `tasks/technical-spec.md` for coding standards
-- If handed off from UIPlanner: Read `tasks/design.md` for Syncfusion component specs
+- Read `projects/{project-name}/design/architecture.md` for UI framework and design system
+- Follow `projects/{project-name}/design/api-spec.md` for endpoint contracts
+- Use `projects/{project-name}/design/technical-spec.md` for coding standards
+- If handed off from UIPlanner: Read `projects/{project-name}/design/ui-design.md` for Syncfusion component specs
 
 ## 💡 Frontend-Specific Guidelines
 
@@ -102,7 +103,7 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 **When handed off from UIPlanner:**
 
 ### Step 1: Read Design Specification
-- Open `tasks/design.md` created by UIPlanner
+- Open `projects/{project-name}/design/ui-design.md` created by UIPlanner
 - Extract: Theme tokens (colors, fonts, spacing), component list, layout structure, styling overrides
 
 ### Step 2: Setup Syncfusion
@@ -116,7 +117,7 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 - Apply CSS overrides as specified (e.g., `.e-grid .e-headercell { background: var(--surface-bg) }`)
 
 ### Step 4: Implement Components
-- Follow component configuration from design.md
+- Follow component configuration from ui-design.md
 - Set props exactly as specified (e.g., `GridLines='None'`, `RowHeight={48}`)
 - Integrate with existing layout containers
 - Bind data from API endpoints
@@ -127,6 +128,8 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 - Test responsiveness across breakpoints
 
 **Key Principle:** UIPlanner provides the "what" and "how" - you provide the "implementation". Follow design specs precisely to maintain visual consistency.
+
+**Save Results:** Document implementation in `projects/{project-name}/results/task-{ID}-result.md`
 
 ---
 

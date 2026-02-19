@@ -5,7 +5,7 @@ tools: ['read', 'edit', 'codestudio', 'execute', 'search']
 handoffs:
   - label: "⬅️ Back to Main Agent"
     agent: MainAgent
-    prompt: "Backend task completed. Review progress in current-sprint.json."
+    prompt: "Backend task completed. Review progress in projects/{project-name}/tasks/current-sprint.yaml."
     send: true
   - label: "🔧 Continue Backend Work"
     agent: BackendTeammate
@@ -29,7 +29,8 @@ Implement backend tasks (APIs, databases, business logic) following the **Standa
 
 **Workflow:** Claim → Execute → Document → Update → Handoff  
 **Task Type:** `backend`  
-**Files:** Read `tasks/technical-spec.md`, `tasks/api-spec.md`, `tasks/database-schema.md`  
+**Project Folder:** `projects/{project-name}/`  
+**Files:** Read `projects/{project-name}/design/technical-spec.md`, `api-spec.md`, `database-schema.md`  
 **Details:** See `tasks/teammate-workflow.md` for complete 5-step protocol
 
 ## 🔧 Your Specializations
@@ -43,9 +44,9 @@ Implement backend tasks (APIs, databases, business logic) following the **Standa
 - API documentation (OpenAPI/Swagger)
 
 **Technical Stack:**
-- Read `tasks/technical-spec.md` for language/framework standards
-- Follow `tasks/api-spec.md` for endpoint contracts
-- Use `tasks/database-schema.md` for data models
+- Read `projects/{project-name}/design/technical-spec.md` for language/framework standards
+- Follow `projects/{project-name}/design/api-spec.md` for endpoint contracts
+- Use `projects/{project-name}/design/database-schema.md` for data models
 
 ## 💡 Backend-Specific Guidelines
 
