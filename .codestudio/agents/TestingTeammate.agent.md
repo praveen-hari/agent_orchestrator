@@ -1,7 +1,7 @@
 ---
 name: TestingTeammate
 description: QA specialist - testing, verification, quality assurance
-tools: ['read', 'edit', 'execute', 'search']
+tools: ['codestudio', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 handoffs:
   - label: "⬅️ Back to Main Agent"
     agent: MainAgent

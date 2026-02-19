@@ -3,10 +3,6 @@ description: Universal UI/UX Architect agent for Syncfusion components. It analy
 name: UniversalUIPlanner
 tools: ['codestudio/uiBuilder', 'read/readFile', 'edit/createDirectory', 'edit/createFile', 'search', 'agent']
 handoffs:
-  - label: Complete Phase 2 Design
-    agent: Plan&Execute
-    prompt: The UI/UX architecture plan has been created and documented in tasks/design.md. Phase 2 design is complete. Please review the design documentation, approve it, and proceed to Phase 3 (Implementation). During Phase 3, delegate frontend implementation to UIDesigner using the design specifications.
-    send: true
   - label: Hand off to FrontendTeammate
     agent: FrontendTeammate
     prompt: UI/UX design complete in tasks/design.md. Implement Syncfusion components following design specifications, theme tokens, and component configurations.

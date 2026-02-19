@@ -1,7 +1,7 @@
 ---
 name: MainAgent
 description: Team Lead orchestrator - decomposes requests into tasks and coordinates teammates
-tools: ['read', 'edit', 'search', 'todo']
+tools: ['codestudio', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 handoffs:
   - label: "📋 Refine Requirements"
     agent: RequirementsAnalyst

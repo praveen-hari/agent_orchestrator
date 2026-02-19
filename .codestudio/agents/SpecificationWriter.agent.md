@@ -1,7 +1,7 @@
 ---
 name: SpecificationWriter
 description: Technical specification and architecture design specialist
-tools: ['read', 'edit', 'search', 'web']
+tools: ['codestudio', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 handoffs:
   - label: "✅ Design Complete → Start Implementation Planning"
     agent: MainAgent
