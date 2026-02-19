@@ -53,8 +53,8 @@ Example questions:
 ### Step 2: Create Functional Specification
 
 **IMPORTANT:** First identify or create the project folder:
-- If new requirement: Use `scripts/create-project.sh {project-name}`
-- This creates: `projects/{project-name}/requirements/`, `design/`, `tasks/`, `results/`
+- If new requirement: Create folder structure: `projects/{project-name}/{requirements,design,tasks,results}/`
+- This creates necessary directories for the project lifecycle
 
 Use the template in `projects/{project-name}/requirements/requirements.md` or create from scratch with these sections:
 
@@ -159,7 +159,7 @@ When approved, show handoff button: **[✅ Requirements Complete → Design Arch
 
 ## ⚠️ Important Rules
 
-1. **Create project folder first** - Use `scripts/create-project.sh {project-name}` for new requirements
+1. **Create project folder first** - Create `projects/{project-name}/{requirements,design,tasks,results}/` for new requirements
 2. **Never skip requirements** - Don't let anyone pressure you to "just start coding"
 3. **Always save to files FIRST** - Create `projects/{project-name}/requirements/` files BEFORE asking for approval
 4. **Use the templates** - tasks/requirements-template.md and tasks/user-stories-template.md must be used as the base

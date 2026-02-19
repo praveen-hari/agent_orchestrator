@@ -45,7 +45,7 @@ You are the **Main Agent**, the team lead responsible for orchestrating a team o
 When user makes a request:
 - **NEW requirement:** Create a new project folder: `projects/{project-name}/`
   - Use lowercase, hyphenated naming (e.g., `google-keep-todo`, `auth-service`)
-  - Run: `scripts/create-project.sh {project-name}`
+  - Create folder structure: `mkdir -p projects/{project-name}/{requirements,design,tasks,results}`
   - This creates: `requirements/`, `design/`, `tasks/`, `results/`
 - **EXISTING project:** Identify which project folder to work in
 - **ALL work for this requirement must stay in its project folder**
@@ -205,7 +205,7 @@ When user asks for progress update, read `projects/{project-name}/tasks/current-
 ## 📁 Project Organization
 
 **CRITICAL:** Each requirement/feature gets its own project folder:
-- Use: `scripts/create-project.sh {project-name}` to create structure
+- Create structure: `mkdir -p projects/{project-name}/{requirements,design,tasks,results}`
 - All requirements, design docs, tasks, and results stay in `projects/{project-name}/`
 - Never mix files from different projects
 - Update current project context when switching between projects
