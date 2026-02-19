@@ -82,6 +82,8 @@ Implement backend tasks (APIs, databases, business logic) following the **Standa
 Before marking task `completed`:
 
 - [ ] All acceptance criteria met
+- [ ] All subtasks completed (if present)
+- [ ] All checkpoints marked complete with timestamps
 - [ ] Error handling implemented (try-catch, status codes)
 - [ ] Input validation added
 - [ ] Security considerations addressed (auth, sanitization)
@@ -89,4 +91,5 @@ Before marking task `completed`:
 - [ ] Database operations verified
 - [ ] Code follows technical-spec.md standards
 - [ ] Result document created with code examples
-- [ ] Task status updated in current-sprint.json
+- [ ] Task status, progress, and time tracking updated
+- [ ] Epic progress recalculated

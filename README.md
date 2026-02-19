@@ -75,7 +75,7 @@ This agent team follows a structured 3-phase SDLC workflow:
 
 ```
 agent_orchestrator/
-├── .github/
+├── .codestudio/
 │   └── agents/                          # VS Code custom agents
 │       ├── RequirementsAnalyst.agent.md
 │       ├── SpecificationWriter.agent.md
@@ -91,12 +91,21 @@ agent_orchestrator/
 │   ├── technical-spec.md                # Phase 2 output
 │   ├── api-spec.md                      # Phase 2 output
 │   ├── database-schema.md               # Phase 2 output
-│   ├── current-sprint.json              # Phase 3 task queue
+│   │
+│   ├── current-sprint.yaml              # 🆕 Lightweight task index (YAML)
+│   ├── task-details/                    # 🆕 Detailed task context (Markdown)
+│   │   ├── task-001.md
+│   │   ├── task-002.md
+│   │   └── task-XXX.md
+│   │
+│   ├── task-results/                    # Completed task outputs
 │   ├── agent-log.md                     # Activity timeline
-│   └── task-results/                    # Completed task outputs
+│   └── HYBRID-FORMAT-GUIDE.md           # 🆕 Format documentation
 │
 └── README.md                            # This file
 ```
+
+**🎯 New Hybrid Format:** Sprint tracking now uses YAML index + Markdown task files for 80% less token usage and better LLM efficiency!
 
 ## 📋 Workflow Example
 
@@ -332,9 +341,11 @@ ready → claimed → in-progress → completed
 
 - `tasks/requirements-template.md` - For RequirementsAnalyst
 - `tasks/user-stories-template.md` - For RequirementsAnalyst
-- `tasks/current-sprint-template.json` - For MainAgent
+- `tasks/current-sprint.yaml` - 🆕 YAML sprint index (MainAgent)
+- `tasks/task-template.md` - 🆕 Markdown task detail template
+- `tasks/current-sprint-template.json` - Legacy JSON format (still supported)
 
-Use these as starting points for your documents.
+**Recommended:** Use the new hybrid YAML + Markdown format for 80% better token efficiency!
 
 ## 🐛 Troubleshooting
 

@@ -108,10 +108,13 @@ When developer fixes bugs:
 Before marking task `completed`:
 
 - [ ] All required test types executed
+- [ ] All subtasks completed (if present)
+- [ ] All checkpoints marked complete
 - [ ] Results documented (pass/fail counts, coverage %)
 - [ ] All bugs documented with severity and reproduction steps
 - [ ] Screenshots/videos included for UI issues
 - [ ] Recommendations provided for improvement
 - [ ] Result file created with test evidence
-- [ ] Task status updated based on outcome
+- [ ] Task status, progress, and time tracking updated
+- [ ] Epic progress recalculated
 - [ ] If bugs found: Assigned to appropriate teammate

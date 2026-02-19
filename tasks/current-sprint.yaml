@@ -1,0 +1,149 @@
+# Sprint Index - Lightweight tracking file
+# Detailed task info is in tasks/task-details/*.md
+
+sprint_id: sprint-2026-02-19-001
+created_at: 2026-02-19T10:00:00Z
+created_by: MainAgent
+user_request: Description of what user asked for
+
+metadata:
+  estimated_total_duration: 3h
+  actual_duration: 0h
+  task_count: 12
+  completed_count: 0
+  in_progress_count: 0
+  blocked_count: 8
+  ready_count: 4
+  failed_count: 0
+  epic_count: 2
+  overall_progress: 0
+  velocity_factor: 1.0
+
+epics:
+  - id: epic-001
+    title: Authentication System
+    description: Complete user authentication with JWT
+    priority: critical  # critical | high | medium | low
+    status: in-progress  # planned | in-progress | completed | blocked
+    progress: 35
+    task_ids: [task-001, task-002, task-003]
+    completed_tasks: 1
+    total_tasks: 3
+    estimated_duration: 2h
+    actual_duration: 45min
+    started_at: 2026-02-19T10:00:00Z
+    target_completion: 2026-02-19T12:00:00Z
+    technical_context:
+      related_specs: [tasks/technical-spec.md, tasks/api-spec.md]
+      key_files: [src/auth/, src/middleware/]
+      dependencies: []
+
+  - id: epic-002
+    title: Frontend Components
+    description: UI implementation for user features
+    priority: high
+    status: blocked
+    progress: 0
+    task_ids: [task-004, task-005]
+    completed_tasks: 0
+    total_tasks: 2
+    estimated_duration: 1.5h
+    dependencies: [epic-001]
+
+milestones:
+  - id: milestone-001
+    name: MVP Complete
+    target_date: 2026-03-01T00:00:00Z
+    required_epics: [epic-001, epic-002]
+    required_tasks: [task-001, task-005, task-010]
+    status: on-track  # on-track | at-risk | delayed | completed
+    completion_percentage: 0
+
+tasks:
+  # Simple index - full details in task-details/*.md files
+  
+  - id: task-001
+    epic_id: epic-001
+    title: Create database schema
+    type: backend  # backend | frontend | testing | devops | documentation
+    priority: critical
+    priority_score: 10
+    status: ready  # ready | blocked | claimed | in-progress | review | completed | failed
+    assigned_to: null
+    estimated_duration: 15min
+    actual_duration: null
+    deadline: null
+    dependencies: []
+    detail_file: tasks/task-details/task-001.md
+    has_subtasks: false
+    is_long_running: false
+    
+  - id: task-002
+    epic_id: epic-001
+    title: Implement auth API endpoints
+    type: backend
+    priority: high
+    priority_score: 9
+    status: blocked
+    assigned_to: null
+    estimated_duration: 90min
+    dependencies: [task-001]
+    detail_file: tasks/task-details/task-002.md
+    has_subtasks: true
+    is_long_running: true
+    
+  - id: task-003
+    epic_id: epic-001
+    title: Add JWT middleware
+    type: backend
+    priority: high
+    priority_score: 8
+    status: blocked
+    assigned_to: null
+    estimated_duration: 30min
+    dependencies: [task-002]
+    detail_file: tasks/task-details/task-003.md
+    has_subtasks: false
+    is_long_running: false
+    
+  - id: task-004
+    epic_id: epic-002
+    title: Create login UI component
+    type: frontend
+    priority: high
+    priority_score: 8
+    status: blocked
+    assigned_to: null
+    estimated_duration: 45min
+    dependencies: [task-002]
+    detail_file: tasks/task-details/task-004.md
+    has_subtasks: false
+    is_long_running: false
+    
+  - id: task-005
+    epic_id: epic-002
+    title: Integrate auth with frontend
+    type: frontend
+    priority: medium
+    priority_score: 7
+    status: blocked
+    assigned_to: null
+    estimated_duration: 30min
+    dependencies: [task-003, task-004]
+    detail_file: tasks/task-details/task-005.md
+    has_subtasks: false
+    is_long_running: false
+
+work_sessions:
+  - session_id: session-001
+    started_at: 2026-02-19T09:00:00Z
+    ended_at: null
+    tasks_completed: []
+    agents_active: [BackendTeammate]
+    notes: Starting sprint implementation
+
+# Quick reference:
+# - Fast status updates: Edit this YAML file
+# - Detailed work: Edit individual task markdown files
+# - Agent reads: YAML for overview, then specific task MD files
+# - Epic context: All specs listed in technical_context

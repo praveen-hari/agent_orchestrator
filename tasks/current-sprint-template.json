@@ -6,21 +6,63 @@
   
   "metadata": {
     "estimated_total_duration": "3 hours",
+    "actual_duration": "0 hours",
     "task_count": 12,
     "completed_count": 0,
     "in_progress_count": 0,
     "blocked_count": 8,
     "ready_count": 4,
-    "failed_count": 0
+    "failed_count": 0,
+    "epic_count": 3,
+    "average_velocity": 1.0,
+    "efficiency_score": 0
   },
+  
+  "epics": [
+    {
+      "id": "epic-001",
+      "title": "Feature Name or Epic Title",
+      "description": "High-level description of this feature group",
+      "priority": "critical",
+      "status": "in-progress",
+      "task_ids": ["task-001", "task-002", "task-003"],
+      "completed_tasks": 0,
+      "total_tasks": 3,
+      "progress_percentage": 0,
+      "estimated_duration": "2 hours",
+      "actual_duration": "0 hours",
+      "started_at": null,
+      "completed_at": null,
+      "milestone": "MVP",
+      "technical_context": {
+        "related_specs": ["tasks/technical-spec.md", "tasks/api-spec.md"],
+        "key_files": ["src/auth/", "src/middleware/"],
+        "dependencies": ["epic-000"]
+      }
+    }
+  ],
+  
+  "milestones": [
+    {
+      "id": "milestone-001",
+      "name": "MVP Complete",
+      "target_date": "2026-03-01T00:00:00Z",
+      "required_epics": ["epic-001", "epic-002"],
+      "required_tasks": ["task-001", "task-005", "task-010"],
+      "status": "on-track",
+      "completion_percentage": 0
+    }
+  ],
   
   "tasks": [
     {
       "id": "task-001",
+      "epic_id": "epic-001",
       "title": "Short descriptive title",
       "description": "Detailed description of what needs to be done",
       "type": "backend",
-      "priority": 10,
+      "priority": "critical",
+      "priority_score": 10,
       "status": "ready",
       "dependencies": [],
       "assigned_to": null,
@@ -28,6 +70,14 @@
       "started_at": null,
       "completed_at": null,
       "estimated_duration": "15min",
+      "actual_duration": null,
+      "deadline": null,
+      
+      "is_long_running": false,
+      "can_work_parallel": true,
+      "subtasks": [],
+      "progress_percentage": 0,
+      "checkpoints": [],
       
       "files_to_create": [
         "path/to/new/file.ts"
@@ -51,15 +101,24 @@
       "result_file": null,
       "error": null,
       "retry_count": 0,
-      "notes": []
+      "notes": [],
+      
+      "time_tracking": {
+        "estimated_minutes": 15,
+        "actual_minutes": 0,
+        "overhead_minutes": 0,
+        "variance_percentage": 0
+      }
     },
     
     {
       "id": "task-002",
+      "epic_id": "epic-001",
       "title": "Another task title",
       "description": "This task depends on task-001 completing first",
       "type": "backend",
-      "priority": 9,
+      "priority": "high",
+      "priority_score": 9,
       "status": "blocked",
       "dependencies": ["task-001"],
       "assigned_to": null,
@@ -67,6 +126,14 @@
       "started_at": null,
       "completed_at": null,
       "estimated_duration": "30min",
+      "actual_duration": null,
+      "deadline": null,
+      
+      "is_long_running": false,
+      "can_work_parallel": false,
+      "subtasks": [],
+      "progress_percentage": 0,
+      "checkpoints": [],
       
       "files_to_create": [
         "path/to/controller.ts",
@@ -87,15 +154,24 @@
       "result_file": null,
       "error": null,
       "retry_count": 0,
-      "notes": []
+      "notes": [],
+      
+      "time_tracking": {
+        "estimated_minutes": 30,
+        "actual_minutes": 0,
+        "overhead_minutes": 0,
+        "variance_percentage": 0
+      }
     },
     
     {
       "id": "task-003",
+      "epic_id": "epic-002",
       "title": "Frontend task example",
       "description": "Create a UI component",
       "type": "frontend",
-      "priority": 8,
+      "priority": "high",
+      "priority_score": 8,
       "status": "ready",
       "dependencies": [],
       "assigned_to": null,
@@ -103,6 +179,14 @@
       "started_at": null,
       "completed_at": null,
       "estimated_duration": "45min",
+      "actual_duration": null,
+      "deadline": null,
+      
+      "is_long_running": false,
+      "can_work_parallel": true,
+      "subtasks": [],
+      "progress_percentage": 0,
+      "checkpoints": [],
       
       "files_to_create": [
         "src/components/MyComponent.tsx",
@@ -126,15 +210,24 @@
       "result_file": null,
       "error": null,
       "retry_count": 0,
-      "notes": []
+      "notes": [],
+      
+      "time_tracking": {
+        "estimated_minutes": 45,
+        "actual_minutes": 0,
+        "overhead_minutes": 0,
+        "variance_percentage": 0
+      }
     },
     
     {
       "id": "task-004",
+      "epic_id": "epic-002",
       "title": "Testing task example",
       "description": "Test the feature implemented in previous tasks",
       "type": "testing",
-      "priority": 6,
+      "priority": "medium",
+      "priority_score": 6,
       "status": "blocked",
       "dependencies": ["task-002", "task-003"],
       "assigned_to": null,
@@ -142,6 +235,14 @@
       "started_at": null,
       "completed_at": null,
       "estimated_duration": "30min",
+      "actual_duration": null,
+      "deadline": null,
+      
+      "is_long_running": false,
+      "can_work_parallel": false,
+      "subtasks": [],
+      "progress_percentage": 0,
+      "checkpoints": [],
       
       "files_to_create": [
         "tests/integration/feature.test.ts"
@@ -162,14 +263,171 @@
       "result_file": null,
       "error": null,
       "retry_count": 0,
-      "notes": []
+      "notes": [],
+      
+      "time_tracking": {
+        "estimated_minutes": 30,
+        "actual_minutes": 0,
+        "overhead_minutes": 0,
+        "variance_percentage": 0
+      }
+    },
+    
+    {
+      "id": "task-100",
+      "epic_id": "epic-003",
+      "title": "Long-running task example: Database migration",
+      "description": "Migrate entire database schema to new version. This is a complex task that takes 2+ hours.",
+      "type": "backend",
+      "priority": "critical",
+      "priority_score": 10,
+      "status": "ready",
+      "dependencies": [],
+      "assigned_to": null,
+      "claimed_at": null,
+      "started_at": null,
+      "completed_at": null,
+      "estimated_duration": "2h 30min",
+      "actual_duration": null,
+      "deadline": "2026-02-20T17:00:00Z",
+      
+      "is_long_running": true,
+      "can_work_parallel": false,
+      "progress_percentage": 0,
+      "checkpoints": [
+        {
+          "id": "checkpoint-001",
+          "name": "Backup existing database",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "id": "checkpoint-002",
+          "name": "Create migration scripts",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "id": "checkpoint-003",
+          "name": "Test on staging environment",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "id": "checkpoint-004",
+          "name": "Run production migration",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "id": "checkpoint-005",
+          "name": "Verify data integrity",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      
+      "subtasks": [
+        {
+          "id": "task-100.1",
+          "title": "Backup database",
+          "status": "ready",
+          "estimated_duration": "20min",
+          "completed_at": null
+        },
+        {
+          "id": "task-100.2",
+          "title": "Write migration scripts",
+          "status": "blocked",
+          "dependencies": ["task-100.1"],
+          "estimated_duration": "45min",
+          "completed_at": null
+        },
+        {
+          "id": "task-100.3",
+          "title": "Test on staging",
+          "status": "blocked",
+          "dependencies": ["task-100.2"],
+          "estimated_duration": "30min",
+          "completed_at": null
+        },
+        {
+          "id": "task-100.4",
+          "title": "Execute production migration",
+          "status": "blocked",
+          "dependencies": ["task-100.3"],
+          "estimated_duration": "40min",
+          "completed_at": null
+        },
+        {
+          "id": "task-100.5",
+          "title": "Verify and rollback if needed",
+          "status": "blocked",
+          "dependencies": ["task-100.4"],
+          "estimated_duration": "15min",
+          "completed_at": null
+        }
+      ],
+      
+      "files_to_create": [
+        "migrations/2026-02-19-schema-v2.sql",
+        "migrations/rollback-2026-02-19.sql",
+        "scripts/verify-migration.js"
+      ],
+      "files_to_modify": [
+        "src/models/*.ts",
+        "config/database.ts"
+      ],
+      
+      "acceptance_criteria": [
+        "All data migrated without loss",
+        "New schema constraints enforced",
+        "Application works with new schema",
+        "Rollback script tested and ready",
+        "Migration completes in < 5 minutes downtime"
+      ],
+      
+      "technical_notes": [
+        "Schedule during low-traffic window",
+        "Have rollback plan ready",
+        "Monitor database performance during migration",
+        "Use transactions for atomicity"
+      ],
+      
+      "result_file": null,
+      "error": null,
+      "retry_count": 0,
+      "notes": [],
+      
+      "time_tracking": {
+        "estimated_minutes": 150,
+        "actual_minutes": 0,
+        "overhead_minutes": 0,
+        "variance_percentage": 0
+      }
+    }
+  ],
+  
+  "work_sessions": [
+    {
+      "session_id": "session-001",
+      "started_at": "2026-02-19T09:00:00Z",
+      "ended_at": null,
+      "tasks_completed": [],
+      "agents_active": ["BackendTeammate"],
+      "notes": "Starting sprint implementation"
     }
   ],
   
   "comments": [
     "Task types: backend | frontend | testing | devops | documentation",
     "Task status: ready | blocked | claimed | in-progress | review | completed | failed",
-    "Priority: 1-10, where 10 is highest priority",
-    "Dependencies: Array of task IDs that must complete before this task can start"
+    "Priority levels: critical | high | medium | low",
+    "Priority score: 1-10, where 10 is highest priority",
+    "Dependencies: Array of task IDs that must complete before this task can start",
+    "Long-running tasks: Use subtasks and checkpoints for tasks > 1 hour",
+    "Epic grouping: Group related tasks into epics for better context",
+    "Time tracking: Track estimated vs actual time to improve velocity",
+    "Milestones: Define key delivery points with required tasks/epics"
   ]
 }

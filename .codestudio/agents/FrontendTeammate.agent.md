@@ -135,6 +135,8 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 Before marking task `completed`:
 
 - [ ] All acceptance criteria met
+- [ ] All subtasks completed (if present)
+- [ ] All checkpoints marked complete with timestamps
 - [ ] Responsive on mobile, tablet, desktop
 - [ ] Accessibility: semantic HTML, keyboard nav, ARIA labels
 - [ ] Loading states implemented
@@ -145,4 +147,5 @@ Before marking task `completed`:
 - [ ] **If Syncfusion:** Theme tokens match existing app design
 - [ ] **If Syncfusion:** Component styling overrides applied per design.md
 - [ ] Result document created (with screenshots if UI change)
-- [ ] Task status updated in current-sprint.json
+- [ ] Task status, progress, and time tracking updated
+- [ ] Epic progress recalculated

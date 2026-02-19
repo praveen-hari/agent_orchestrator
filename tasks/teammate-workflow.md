@@ -8,21 +8,21 @@ This document defines the standard workflow that all implementation teammates (B
 
 ### Step 1: Claim a Task
 
-1. Read `tasks/current-sprint.json`
+1. Read `tasks/current-sprint.yaml` (lightweight index)
 2. Filter tasks matching your specialization:
    - `type` matches your role (backend/frontend/testing/etc.)
    - `status === "ready"`
    - All `dependencies` are completed
-3. Select the highest priority task
-4. Update task status:
-   ```json
-   {
-     "status": "claimed",
-     "assigned_to": "[YourAgentName]",
-     "claimed_at": "[ISO timestamp]"
-   }
+3. Select highest priority: sort by `priority` (critical > high > medium > low), then `priority_score`
+4. For long-running tasks: check if `is_long_running === true` and claim only if ready for extended work
+5. Update task status in YAML:
+   ```yaml
+   status: claimed
+   assigned_to: BackendTeammate
+   claimed_at: 2026-02-19T10:00:00Z
    ```
-5. Log to `tasks/agent-log.md`:
+6. Read full task details from `tasks/task-details/task-{ID}.md`
+7. Log to `tasks/agent-log.md`:
    ```markdown
    ## [Timestamp] - [AgentName]
    - Claimed task-XXX: [Title]
@@ -31,19 +31,30 @@ This document defines the standard workflow that all implementation teammates (B
 
 ### Step 2: Execute Task
 
-1. Update task status to `in-progress`
-2. Read task requirements:
-   - Task `description`
-   - `acceptance_criteria`
-   - `technical_notes`
-3. Read relevant specifications:
+1. Update task status in `current-sprint.yaml`: `status: in-progress`
+2. Open task detail file: `tasks/task-details/task-{ID}.md`
+3. Read full task context from markdown:
+   - Overview section: description, dependencies
+   - Files section: what to create/modify
+   - Acceptance criteria checklist
+   - Technical notes with standards references
+   - Subtasks (if long-running task)
+   - Checkpoints for progress tracking
+4. Read epic context from `current-sprint.yaml`:
+   - Related specs listed in `technical_context`
+   - Other tasks in same epic for context
+5. Read relevant specifications:
    - `tasks/technical-spec.md` - Implementation standards
    - `tasks/api-spec.md` - API contracts (if applicable)
    - `tasks/architecture.md` - System design
-4. Implement the solution:
-   - Create files listed in `files_to_create`
-   - Modify files listed in `files_to_modify`
-   - Follow coding standards from technical-spec.md
+6. Implement the solution:
+   - For tasks with subtasks: complete each, check off in markdown
+   - Create files listed in Files section
+   - Modify files as specified
+   - Mark checkpoints complete with timestamps in markdown
+   - Log work sessions in the task markdown Work Log section
+   - Update progress percentage in markdown
+   - Follow coding standards from specs
    - Add proper error handling
    - Include documentation/comments
 
@@ -84,21 +95,26 @@ Create `tasks/task-results/task-{id}-result.md`:
 
 ### Step 4: Update Task Status
 
-In `tasks/current-sprint.json`, update the completed task:
+**In `tasks/current-sprint.yaml`**, update the completed task:
 
-```json
-{
-  "id": "task-XXX",
-  "status": "completed",
-  "assigned_to": "[YourAgentName]",
-  "completed_at": "[ISO timestamp]",
-  "result_file": "tasks/task-results/task-XXX-result.md"
-}
+```yaml
+tasks:
+  - id: task-XXX
+    status: completed
+    assigned_to: BackendTeammate
+    actual_duration: 20min
 ```
 
-Also update sprint metadata counts:
-- Increment `metadata.completed_count`
-- Decrement `metadata.in_progress_count`
+**In `tasks/task-details/task-XXX.md`**, update:
+- Mark all checkboxes complete ✅
+- Add completion timestamp to Timeline section
+- Update Progress to 100%
+- Add final work log entry
+
+**Also update in `current-sprint.yaml`:**
+- Epic progress: increment `completed_tasks`, recalculate `progress`
+- Sprint metadata: increment `completed_count`, decrement `in_progress_count`
+- Velocity factor: calculate from actual vs estimated times
 
 ### Step 5: Choose Next Action
 

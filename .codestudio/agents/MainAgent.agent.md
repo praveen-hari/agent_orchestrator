@@ -59,21 +59,46 @@ Before creating tasks, read:
 - `tasks/api-spec.md` - API contracts
 - `tasks/database-schema.md` - Database design
 
+**Note:** Sprint uses hybrid format:
+- `current-sprint.yaml` - Lightweight index for quick scanning
+- `task-details/*.md` - Detailed context per task
+
 ### Step 3: Create Task List
 
-Generate `tasks/current-sprint.json` following the format in `tasks/current-sprint-template.json`.
+Generate `tasks/current-sprint.yaml` (lightweight index) and individual `tasks/task-details/task-{ID}.md` files.
 
-**Required fields per task:**
-- `id`, `title`, `description`, `type` (backend/frontend/testing/devops/docs)
-- `priority` (1-10, higher = more urgent), `status` (ready/blocked/claimed/in-progress/completed)
-- `dependencies` (array of task IDs), `acceptance_criteria` (testable conditions)
-- `files_to_create`, `files_to_modify`, `estimated_duration`
+**In `current-sprint.yaml`:**
+
+**First, create epics** to group related tasks:
+- `id`, `title`, `description`, `priority` (critical/high/medium/low)
+- `task_ids` (array of tasks in this epic)
+- `technical_context` with related spec files and key directories
+
+**Then create task entries** (minimal info):
+- `id`, `epic_id`, `title`, `type`, `priority`, `status`
+- `estimated_duration`, `dependencies`, `detail_file` path
+- `has_subtasks`, `is_long_running` flags
+
+**In `tasks/task-details/task-{ID}.md`:**
+
+Create detailed markdown file for each task using `task-template.md`:
+- Full description and context
+- Files to create/modify (bulleted lists)
+- Acceptance criteria (checkboxes)
+- Technical notes with spec references
+- Subtasks (if >60min) with checkboxes
+- Checkpoints for recovery points
+- Work log section for tracking sessions
+- Testing notes
+- Metadata section
 
 **Key principles:**
-- Mark tasks with unmet dependencies as `status: "blocked"`
-- Mark tasks with no dependencies as `status: "ready"`
-- Order by priority (critical path first)
-- Include metadata: task counts, estimated duration
+- YAML index = fast scanning/updates
+- Markdown files = rich context for execution
+- Group tasks into 2-5 epics per sprint
+- Break tasks >60min into subtasks
+- Mark blocked tasks based on dependencies
+- Set priorities: critical path first
 
 ### Step 4: Present Handoffs
 
@@ -86,11 +111,16 @@ After creating task list, show handoff buttons to let user choose which work str
 ### Step 5: Monitor & Unblock
 
 When user returns to you:
-1. Read `tasks/current-sprint.json` to see current state
+1. Read `tasks/current-sprint.yaml` to see current state (fast scan)
 2. Read `tasks/agent-log.md` to see activity timeline
-3. Check for completed tasks and unblock their dependents:
-   - If task-001 is completed, change task-002 status from "blocked" → "ready"
-4. Summarize progress and suggest next actions
+3. For detailed status, check individual task markdown files in `task-details/`
+4. Check for completed tasks and unblock dependents:
+   - If task-001 completed, change task-002 status from "blocked" → "ready" in YAML
+   - Check subtask checkboxes in markdown to see if parent can be completed
+5. Update epic progress in YAML: `progress = (completed_tasks / total_tasks) * 100`
+6. Calculate velocity: compare `actual_duration` vs `estimated_duration` across tasks
+7. Check milestones: are required tasks on track for target dates?
+8. Summarize progress by epic and suggest next priority actions
 
 ### Step 6: Aggregate Results
 
