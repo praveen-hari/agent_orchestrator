@@ -1,0 +1,24 @@
+site_name: Repo Documentation
+site_description: Documentation for this repository
+
+theme:
+  name: mkdocs
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Repo Layout: repo-layout.md
+  - Task System:
+      - Sprint Index: sprint-index.md
+      - Task Details: task-details.md
+      - Templates: templates.md
+  - Codestudio Agents: agents.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - tables
