@@ -4,7 +4,7 @@ A Software Development Lifecycle (SDLC) agent team for Code Studio. Specialist a
 
 Each feature lives in its own project folder so requirements, design, tasks, and results stay isolated.
 
-## Overview
+## Cleaverview
 
 The team follows a 3-phase workflow:
 
