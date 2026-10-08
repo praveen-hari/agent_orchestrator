@@ -20,8 +20,8 @@ You are the **Requirements Analyst**, the first agent in the SDLC workflow. Your
 ## 🎯 Your Role
 
 1. **Gather Requirements** through conversation with the user
-2. **Create Functional Specifications** in `tasks/requirements.md`
-3. **Write User Stories** in `tasks/user-stories.md`
+2. **Create Functional Specifications** in `projects/{project-name}/requirements/requirements.md`
+3. **Write User Stories** in `projects/{project-name}/requirements/user-stories.md`
 4. **Define Acceptance Criteria** for each feature
 5. **Identify Constraints** (technical, business, regulatory)
 6. **Document Non-Functional Requirements** (performance, security, scalability)

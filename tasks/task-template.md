@@ -39,9 +39,9 @@ Detailed description of what needs to be done. Be specific about the problem bei
 ## 🔧 Technical Notes
 
 **Standards & Specs:**
-- Follow `tasks/technical-spec.md` section X for coding standards
-- Refer to `tasks/api-spec.md` for endpoint contracts
-- Use schema from `tasks/database-schema.md`
+- Follow `projects/{project-name}/design/technical-spec.md` section X for coding standards
+- Refer to `projects/{project-name}/design/api-spec.md` for endpoint contracts
+- Use schema from `projects/{project-name}/design/database-schema.md`
 
 **Implementation Details:**
 - Use TypeScript with strict mode
@@ -137,7 +137,7 @@ Ready → Claimed → In Progress → Review → Completed
 
 ## 📦 Result
 
-**Result File:** `tasks/task-results/task-{ID}-result.md`  
+**Result File:** `projects/{project-name}/results/task-{ID}-result.md`  
 **Status:** ⏳ Not completed yet
 
 Once completed, detailed results will be documented in the result file.

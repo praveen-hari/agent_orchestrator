@@ -47,8 +47,8 @@ Implement REST API endpoints for user authentication: register, login, logout, a
 ## 🔧 Technical Notes
 
 **Standards & Specs:**
-- Follow `tasks/api-spec.md` for exact endpoint contracts
-- Follow `tasks/technical-spec.md` for error response format
+- Follow `projects/{project-name}/design/api-spec.md` for exact endpoint contracts
+- Follow `projects/{project-name}/design/technical-spec.md` for error response format
 
 **Implementation Details:**
 - Use express-validator or Joi for input validation
@@ -142,7 +142,7 @@ _No work sessions yet. Claim this task to begin._
 
 ## 📦 Result
 
-**Result File:** `tasks/task-results/task-002-result.md`  
+**Result File:** `projects/{project-name}/results/task-002-result.md`  
 **Status:** ⏳ Not completed yet
 
 ---
