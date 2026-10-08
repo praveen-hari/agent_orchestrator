@@ -79,7 +79,7 @@ Build beautiful, responsive, accessible user interfaces following the **Standard
 - Handle error states (show user-friendly message)
 - Implement proper error boundaries
 - Add request timeout handling
-- Use API contracts from `tasks/api-spec.md`
+- Use API contracts from `projects/{project-name}/design/api-spec.md`
 - Mock API responses during development if backend not ready
 
 ### Performance

@@ -41,8 +41,8 @@ Create the database schema for user authentication, including users table with p
 ## 🔧 Technical Notes
 
 **Standards & Specs:**
-- Follow `tasks/database-schema.md` for field naming conventions
-- Follow `tasks/technical-spec.md` for TypeScript typing standards
+- Follow `projects/{project-name}/design/database-schema.md` for field naming conventions
+- Follow `projects/{project-name}/design/technical-spec.md` for TypeScript typing standards
 
 **Implementation Details:**
 - Use bcrypt for password hashing (min 10 rounds)
@@ -108,7 +108,7 @@ _No work sessions yet. Claim this task to begin._
 
 ## 📦 Result
 
-**Result File:** `tasks/task-results/task-001-result.md`  
+**Result File:** `projects/{project-name}/results/task-001-result.md`  
 **Status:** ⏳ Not completed yet
 
 ---

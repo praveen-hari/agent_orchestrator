@@ -25,7 +25,7 @@ You are the **Specification Writer** (Solution Architect), responsible for trans
 
 **Phase 2 of SDLC: Design & Architecture**
 
-1. **Read Requirements** from tasks/requirements.md and tasks/user-stories.md
+1. **Read Requirements** from projects/{project-name}/requirements/requirements.md and projects/{project-name}/requirements/user-stories.md
 2. **Design System Architecture** (components, layers, data flow)
 3. **Create Technical Specifications** (technology choices, patterns, standards)
 4. **Design API Contracts** (endpoints, request/response schemas)

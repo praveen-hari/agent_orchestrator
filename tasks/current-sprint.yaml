@@ -34,7 +34,7 @@ epics:
     started_at: 2026-02-19T10:00:00Z
     target_completion: 2026-02-19T12:00:00Z
     technical_context:
-      related_specs: [tasks/technical-spec.md, tasks/api-spec.md]
+      related_specs: [projects/{project-name}/design/technical-spec.md, projects/{project-name}/design/api-spec.md]
       key_files: [src/auth/, src/middleware/]
       dependencies: []
 

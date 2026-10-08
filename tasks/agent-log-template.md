@@ -6,7 +6,7 @@ This file tracks all significant actions taken by agents during the development 
 
 ## 2026-02-19 10:00:00 - RequirementsAnalyst
 **Action:** Created requirements documentation  
-**Files:** tasks/requirements.md, tasks/user-stories.md  
+**Files:** projects/{project-name}/requirements/requirements.md, projects/{project-name}/requirements/user-stories.md  
 **Summary:** Documented 10 functional requirements, 5 non-functional requirements, and 15 user stories for todo app project.  
 **Next:** Hand off to SpecificationWriter for technical design
 
@@ -14,7 +14,7 @@ This file tracks all significant actions taken by agents during the development 
 
 ## 2026-02-19 10:30:00 - SpecificationWriter
 **Action:** Created technical design documentation  
-**Files:** tasks/architecture.md, tasks/technical-spec.md, tasks/api-spec.md, tasks/database-schema.md  
+**Files:** projects/{project-name}/design/architecture.md, projects/{project-name}/design/technical-spec.md, projects/{project-name}/design/api-spec.md, projects/{project-name}/design/database-schema.md  
 **Summary:** Designed 3-tier architecture, specified 8 API endpoints, defined 2 database tables.  
 **Next:** Hand off to MainAgent for task decomposition
 
@@ -22,7 +22,7 @@ This file tracks all significant actions taken by agents during the development 
 
 ## 2026-02-19 11:00:00 - MainAgent
 **Action:** Created implementation task list  
-**File:** tasks/current-sprint.json  
+**File:** projects/{project-name}/tasks/current-sprint.yaml  
 **Summary:** Decomposed design into 25 tasks with dependencies. 4 tasks ready to start (backend schema, frontend components).  
 **Next:** Delegate backend tasks to BackendTeammate
 
@@ -47,7 +47,7 @@ This file tracks all significant actions taken by agents during the development 
 **Status:** in-progress → completed  
 **Duration:** 12 minutes (3 min under estimate)  
 **Files Created:** src/models/todo.model.ts  
-**Result:** tasks/task-results/task-001-result.md  
+**Result:** projects/{project-name}/results/task-001-result.md  
 **Summary:** Created Todo schema with validation, indexes on createdAt for sorting. All acceptance criteria met.  
 **Next:** Unblocked task-002 (depends on task-001)
 
@@ -94,7 +94,7 @@ This file tracks all significant actions taken by agents during the development 
 **Status:** in-progress → completed  
 **Duration:** 32 minutes (2 min over estimate)  
 **Files Created:** src/routes/todo.routes.ts, src/controllers/todo.controller.ts  
-**Result:** tasks/task-results/task-002-result.md  
+**Result:** projects/{project-name}/results/task-002-result.md  
 **Summary:** Implemented CRUD endpoints: GET, POST, PUT, DELETE for todos. All endpoints tested with Postman.  
 **Next:** Unblocked task-004 (integration task)
 
@@ -105,7 +105,7 @@ This file tracks all significant actions taken by agents during the development 
 **Status:** in-progress → completed  
 **Duration:** 49 minutes (4 min over estimate)  
 **Files Created:** src/components/TodoList.tsx, src/components/TodoList.css, src/components/TodoList.test.tsx  
-**Result:** tasks/task-results/task-005-result.md  
+**Result:** projects/{project-name}/results/task-005-result.md  
 **Summary:** Created TodoList component with pagination, filtering, responsive design. WCAG AA compliant.  
 **Next:** Ready for integration with API (task-006)
 
@@ -134,7 +134,7 @@ This file tracks all significant actions taken by agents during the development 
 **Action:** Completed task-006  
 **Status:** in-progress → completed  
 **Duration:** 35 minutes  
-**Result:** tasks/task-results/task-006-result.md  
+**Result:** projects/{project-name}/results/task-006-result.md  
 **Summary:** Connected TodoList to GET /api/todos, added loading states, error handling. Ready for testing.  
 **Next:** Hand off to TestingTeammate for verification
 
@@ -151,7 +151,7 @@ This file tracks all significant actions taken by agents during the development 
 **Action:** Completed task-010 - ISSUES FOUND  
 **Status:** in-progress → review  
 **Duration:** 20 minutes  
-**Result:** tasks/task-results/task-010-result.md  
+**Result:** projects/{project-name}/results/task-010-result.md  
 **Summary:** Found 2 bugs:
 1. PUT endpoint returns 404 (typo in URL - /todo instead of /todos)
 2. DELETE doesn't persist to database (missing await)  
@@ -184,7 +184,7 @@ This file tracks all significant actions taken by agents during the development 
 **Action:** Completed task-010 - ALL TESTS PASS  
 **Status:** in-progress → completed  
 **Duration:** 10 minutes (re-test)  
-**Result:** Updated tasks/task-results/task-010-result.md  
+**Result:** Updated projects/{project-name}/results/task-010-result.md  
 **Summary:** ✅ All integration tests passing. PUT and DELETE now work correctly. Test coverage: 88%.  
 **Next:** Continue with remaining tasks
 
